@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
 def no_c(my_string):
-    for character in "cC":
-        new_string = my_string.replace(character, "")
+
+    new_string = my_string.translate({ord(c): None for c in "cC"})
     return(new_string)
