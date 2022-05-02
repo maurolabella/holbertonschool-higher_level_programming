@@ -1,10 +1,13 @@
 #!/usr/bin/python3
 
+from tokenize import blank_re
+
+
 def multiple_returns(sentence):
     length = len(sentence)
-    if sentence[0]:
-        first = sentence[0]
-    else:
+    if not(sentence and sentence.strip()):
         first = None
+    else:
+        first = sentence[0]
     res = (length, first)
     return(res)
