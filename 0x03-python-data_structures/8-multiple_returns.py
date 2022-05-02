@@ -4,10 +4,14 @@ from tokenize import blank_re
 
 
 def multiple_returns(sentence):
-    length = len(sentence)
-    if not(sentence and sentence.strip()):
-        first = None
-    else:
-        first = sentence[0]
-    res = (length, first)
-    return(res)
+
+    if len(sentence):
+        return(len(sentence), sentence[0])
+    return(0, None)
+# length = len(sentence)
+# if not(sentence and sentence.strip()):
+#     first = None
+# else:
+#     first = sentence[0]
+# res = (length, first)
+# return(res)
