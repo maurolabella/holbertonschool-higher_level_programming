@@ -2,6 +2,9 @@
 
 
 def roman_to_int(roman_string):
+
+    if not(isinstance(roman_string, str)) or roman_string is None:
+        return None
     romans = ["M", "D", "C", "L", "X", "V", "I"]
     decimals = [1000, 500, 100, 50, 10, 5, 1]
     base = list(roman_string)
