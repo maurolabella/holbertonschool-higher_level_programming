@@ -16,7 +16,7 @@ def roman_to_int(roman_string):
                 sum = sum - bse_x[i]
             else:
                 max = bse_x[i]
-            sum = sum + bse_x[i]
+                sum = sum + bse_x[i]
         return sum
 
     except Exception:
