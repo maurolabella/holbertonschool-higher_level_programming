@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
 
+from logging import exception
+
+
 def roman_to_int(roman_string):
 
     if not(isinstance(roman_string, str)) or roman_string is None:
@@ -20,7 +23,7 @@ def roman_to_int(roman_string):
             sum = sum + bse_x[i]
         return sum
 
-    except:
+    except exception:
         return 0
 
 # bse_sum = [(lambda x: x if (x >= max) else -x)
