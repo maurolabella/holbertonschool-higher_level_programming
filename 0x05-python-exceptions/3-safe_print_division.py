@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 
-from unittest import result
-
 
 def safe_print_division(a, b):
     t = 0
