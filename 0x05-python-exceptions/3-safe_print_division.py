@@ -4,14 +4,14 @@ from unittest import result
 
 
 def safe_print_division(a, b):
-    result = None
+    t = None
     try:
-        result = a / b
+        t = a / b
     except Exception:
         pass
     finally:
-        if result is not None:
-            print("Inside result: {:.1f}".format(result))
+        if t is not None:
+            print("Inside result: {:.1f}".format(t))
         else:
             print("Inside result: None")
-    return result
+    return t
