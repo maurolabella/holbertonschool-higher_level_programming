@@ -6,7 +6,7 @@ from unittest import case
 
 
 def list_division(my_list_1, my_list_2, list_length):
-    new_list = list()
+    new_list = []
     for i in range(list_length):
         new_element = 0
         try:
