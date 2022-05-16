@@ -1,9 +1,5 @@
 #!/usr/bin/python3
 
-from http.client import SWITCHING_PROTOCOLS
-from sys import setswitchinterval
-from unittest import case
-
 
 def list_division(my_list_1, my_list_2, list_length):
     new_list = []
