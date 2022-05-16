@@ -4,11 +4,11 @@ from unittest import result
 
 
 def safe_print_division(a, b):
-    t = None
+    t = 0
     try:
         t = a / b
     except Exception:
-        pass
+        t = None
     finally:
         print("Inside result: {}".format(t))
     return t
