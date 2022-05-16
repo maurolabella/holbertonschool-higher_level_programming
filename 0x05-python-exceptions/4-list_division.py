@@ -8,9 +8,9 @@ from unittest import case
 def list_division(my_list_1, my_list_2, list_length):
     new_list = []
     new = 0
-    for i in range(list_length):
+    for i in range(0,list_length):
         try:
-            new_element = my_list_1[i] / my_list_2[i]
+            new = my_list_1[i] / my_list_2[i]
         except ZeroDivisionError:
             new = 0
             print("{}".format("division by 0"))
@@ -21,5 +21,5 @@ def list_division(my_list_1, my_list_2, list_length):
             new = 0
             print("{}".format("wrong type"))
         finally:
-            new_list.append(new_element)
+            new_list.append(new)
     return (new_list)
