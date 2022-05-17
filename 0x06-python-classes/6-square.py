@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""class creation"""
+
 
 class Square:
     """Square - an empty class Square thad defines a square"""
@@ -12,10 +14,6 @@ class Square:
         else:
             self.__size = size
             self.position = position
-        # if (position[0] >= 0 and position[1] >= 0):
-        #     self.__position = position
-        # else:
-        #     raise TypeError("position must be a tuple of 2 positive integers")
 
     def area(self):
         """Public instance method: def area(self)"""
@@ -44,7 +42,9 @@ class Square:
     @position.setter
     def position(self, value):
         """Set a new value position"""
-        if((type(value) is not tuple) or (len(value) != 2) or (type(value[0]) is not int) or (type(value[1]) is not int) or (value[0] < 0) or (value[1] < 0)):
+        if((type(value) is not tuple) or (len(value) != 2) or
+           (type(value[0]) is not int) or (type(value[1]) is not int)
+           or (value[0] < 0) or (value[1] < 0)):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
