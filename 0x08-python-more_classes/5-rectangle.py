@@ -65,4 +65,5 @@ class Rectangle:
         return ((self.__height + self.__width) * 2)
 
     def __del__(self):
+        """Instance of Rectangle Deletion"""
         print("Bye rectangle ...")
