@@ -5,8 +5,8 @@
 class Rectangle:
     """define rectangle class"""
 
-    number_of_instances = 0
     print_symbol = '#'
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         self.width = width
@@ -16,17 +16,16 @@ class Rectangle:
     @property
     def width(self):
         """width retrieve function"""
-        return self.width
+        return self.__width
 
     @width.setter
     def width(self, value):
         """width setter"""
-        if(type(value) is not int):
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        elif(value < 0):
+        if(value < 0):
             raise ValueError("width must be >= 0")
-        else:
-            self.__width = value
+        self.__width = value
 
     def __str__(self):
         """String representation"""
@@ -40,32 +39,35 @@ class Rectangle:
 
     def __repr__(self):
         """String representation generator for eval"""
-        res = "Rectangle (" + str(self.__width) + ", " + str(self.__height)+")"
+        res = "Rectangle(" + str(self.__width) + \
+            ", " + str(self.__height) + ")"
         return res
 
     @property
     def height(self):
         """"height retrieve function"""
-        return self.height
+        return self.__height
 
     @height.setter
     def height(self, value):
         """height setter"""
-        if(type(value) is not int):
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        elif(value < 0):
+        if(value < 0):
             raise ValueError("height must be >= 0")
-        else:
-            self.__height = value
+        self.__height = value
 
     def area(self):
         """area retrieve function"""
         return (self.__height * self.__width)
 
     def perimeter(self):
-        """permiter retrieve function"""
+        """perimeter retrieve function"""
+        if (self.area() == 0):
+            return 0
         return ((self.__height + self.__width) * 2)
 
     def __del__(self):
-        print("Bye rectangle ...")
+        """Instance of Rectangle Deletion"""
+        print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
