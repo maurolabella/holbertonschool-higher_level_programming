@@ -24,6 +24,16 @@ class Rectangle:
         else:
             self.__width = value
 
+    def __str__(self):
+        """String representation"""
+        res = ""
+        if(self.__width * self.__height == 0):
+            return res
+        else:
+            for i in range(self.__height):
+                res += "#"*self.__width + '\n'
+        return res[:-1]
+
     @property
     def height(self):
         """"height retrieve function"""
@@ -40,7 +50,9 @@ class Rectangle:
             self.__height = value
 
     def area(self):
+        """area retrieve function"""
         return (self.__height * self.__width)
 
     def perimeter(self):
+        """permiter retrieve function"""
         return ((self.__height + self.__width) * 2)
