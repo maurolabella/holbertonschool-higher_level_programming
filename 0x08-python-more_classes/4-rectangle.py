@@ -13,7 +13,7 @@ class Rectangle:
     @property
     def width(self):
         """width retrieve function"""
-        return self.width
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -36,13 +36,14 @@ class Rectangle:
 
     def __repr__(self):
         """String representation generator for eval"""
-        res = "Rectangle (" + str(self.__width) + ", " + str(self.__height)+")"
+        res = "Rectangle(" + str(self.__width) + \
+            ", " + str(self.__height) + ")"
         return res
 
     @property
     def height(self):
         """"height retrieve function"""
-        return self.height
+        return self.__height
 
     @height.setter
     def height(self, value):
