@@ -38,3 +38,9 @@ Fifth: empty matrix
 Traceback (most recent call last):
 ...
 ValueError: m_b can't be empty
+
+Sixth: non integer element
+>>> matrix_mul([[1, 2]], [[2,4],[3, 5 -4j]])
+Traceback (most recent call last):
+...
+TypeError: m_b should contain only integers or floats
