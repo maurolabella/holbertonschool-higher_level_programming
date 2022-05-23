@@ -19,7 +19,7 @@ def matrix_divided(matrix, div):
         raise TypeError(msg_1)
     if (matrix == []):
         raise TypeError(msg_1)
-    if isinstance(matrix, (list)) is None or matrix is False:
+    if isinstance(matrix, (list)) is False:
         raise TypeError(msg_1)
     if isinstance(div, (int, float)) is False:
         raise TypeError(msg_3)
