@@ -1,0 +1,46 @@
+`matrix - multiplication`` module
+======================
+
+Using ``matrix_mul``
+-------------------
+
+from 100-matrix_mul.py import matrix_mul(m_a, m_b).
+
+>>> matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+
+One: no arguments
+>>> matrix_mul()
+Traceback (most recent call last):
+...
+TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+Two: non multiplicable matrixes
+>>> matrix_mul([[1, 2]], [[3, 4, 5]])
+Traceback (most recent call last):
+...
+101-lazy_matrix_mul.MultiplicationNotCompatibleMatrixes: m_a and m_b can't be multiplied
+
+Three: not every element a matrix: lone integer
+>>> matrix_mul([[1, 2]], 5)
+Traceback (most recent call last):
+...
+101-lazy_matrix_mul.Not_Matrix_Imput: m_b must be a list
+
+Four: not every element a matrix: a boolean element
+>>> matrix_mul([[1, 2]], False)
+Traceback (most recent call last):
+...
+101-lazy_matrix_mul.Not_Matrix_Imput: m_b must be a list
+
+Fifth: empty matrix
+>>> matrix_mul([[1, 2]], [[]])
+Traceback (most recent call last):
+...
+101-lazy_matrix_mul.Matrix_Empty: m_b can't be empty
+
+Sixth: non integer element
+>>> matrix_mul([[1, 2]], [[2,4],[3, 5 -4j]])
+Traceback (most recent call last):
+...
+101-lazy_matrix_mul.NotInteger_NorFloat_Element: m_b should contain only integers or floats

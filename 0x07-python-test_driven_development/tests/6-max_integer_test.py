@@ -55,6 +55,13 @@ class TestMaxInteger(unittest.TestCase):
         """Test other iterables : list of lists"""
         self.assertRaises(TypeError, max_integer, [1, 2, [1, 2, 3]])
 
+    def test_case_12(self):
+        """Test introducing string without numerical inputs"""
+        try:
+            max_integer(["a", "b", "c"])
+        except Exception as e:
+            self.fail("Unexpected exception %s" % e)
+
 
 if __name__ == '__main__':
     unittest.main()

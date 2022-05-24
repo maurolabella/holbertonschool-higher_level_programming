@@ -3,9 +3,30 @@
 Matrix multiplication - only Matrix product (two matrices)
 Returns a new matrix
 """
+import numpy as np
 
 
-def matrix_mul(m_a, m_b):
+class Not_Matrix_Imput(Exception):
+    pass
+
+
+class Matrix_Empty(Exception):
+    pass
+
+
+class NotInteger_NorFloat_Element(Exception):
+    pass
+
+
+class MultiplicationNotCompatibleMatrixes(Exception):
+    pass
+
+
+class ArgumentCompletionFault(Exception):
+    pass
+
+
+def lazy_matrix_mul(m_a, m_b):
     """
     @m_a = a list of lists(matrix): integers or floats
     @m_b = a list of lists(matrix): integers or floats
@@ -22,37 +43,35 @@ def matrix_mul(m_a, m_b):
     msg_5_b = "each row of m_b must be of the same size"
     msg_6 = "m_a and m_b can't be multiplied"
 
-    equals = []
     if(m_a is None):
-        raise ValueError(msg_3_a)
+        raise ArgumentCompletionFault(msg_3_a)
     if(m_b is None):
-        raise ValueError(msg_3_b)
+        raise ArgumentCompletionFault(msg_3_b)
     if (m_a == [] or m_a == [[]]):
-        raise ValueError(msg_3_a)
+        raise Matrix_Empty(msg_3_a)
     if (m_b == [] or m_b == [[]]):
-        raise ValueError(msg_3_b)
+        raise Matrix_Empty(msg_3_b)
     if isinstance(m_a, (list)) is False:
-        raise TypeError(msg_1_a)
+        raise Not_Matrix_Imput(msg_1_a)
     if isinstance(m_b, (list)) is False:
-        raise TypeError(msg_1_b)
+        raise Not_Matrix_Imput(msg_1_b)
     if(len(set([len(row) for row in m_a])) > 1):
-        raise TypeError(msg_5_a)
+        raise Not_Matrix_Imput(msg_5_a)
     if(len(set([len(row) for row in m_b])) > 1):
-        raise TypeError(msg_5_b)
+        raise Not_Matrix_Imput(msg_5_b)
     if(len(m_a[0]) != len([1 for row in m_b])):
-        raise ValueError(msg_6)
+        raise MultiplicationNotCompatibleMatrixes(msg_6)
     for row in m_a:
         if isinstance(row, list) is False:
-            raise TypeError(msg_2_a)
+            raise Not_Matrix_Imput(msg_2_a)
         for a in row:
             if isinstance(a, (int, float)) is False:
-                raise TypeError(msg_4_a)
+                raise NotInteger_NorFloat_Element(msg_4_a)
     for row in m_b:
         if isinstance(row, list) is False:
-            raise TypeError(msg_2_b)
+            raise Not_Matrix_Imput(msg_2_b)
         for b in row:
             if isinstance(b, (int, float)) is False:
-                raise TypeError(msg_4_b)
-    equals = [[sum(a*b for a, b in zip(A_row, B_col))
-               for B_col in zip(*m_b)] for A_row in m_a]
+                raise NotInteger_NorFloat_Element(msg_4_b)
+    equals = np.dot(m_a, m_b)
     return equals
