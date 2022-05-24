@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
 
+from re import S
+
+
 def copy_list(l):
-    list = l
-    return list
+    s = list(l)
+    return s
