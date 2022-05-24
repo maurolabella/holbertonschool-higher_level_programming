@@ -8,6 +8,17 @@ from 0-add_integer import add_integer.
 
     >>> add_integer = __import__('0-add_integer').add_integer
 
+Importing module
+		>>> module = __import__('0-add_integer')
+
+Checking Doc Module
+		>>> len(module.__doc__) > 1
+		True
+
+Checking Doc Function
+		>>> len(add_integer.__doc__) > 1
+		True
+
 Adding one integer
     >>> add_integer(2)
     100
