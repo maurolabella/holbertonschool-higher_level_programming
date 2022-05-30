@@ -27,4 +27,12 @@
 	>>> a.print_sorted()
 	[-7, -2]
 
+3. chars ("a","b")
+	>>> a = MyList()
+	>>> a.append("a")
+	>>> a.append("b")
+	>>> print(a)
+	['a', 'b']
+	>>> a.print_sorted()
+	['a', 'b']
 
