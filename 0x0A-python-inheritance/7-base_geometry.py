@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """Integer validator"""
 
-from typing import Type
-
 
 class BaseGeometry():
     """Class BaseGeometry"""
