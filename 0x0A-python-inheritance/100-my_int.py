@@ -6,9 +6,7 @@ class MyInt(int):
     """is a rebel MyInt has == and != inverted"""
 
     def __eq__(self, n):
-        """Yes"""
-        return super().__ge__(n)
+        return super().__ne__(n)
 
-    def __ge__(self, n):
-        """Yes"""
+    def __ne__(self, n):
         return super().__eq__(n)
