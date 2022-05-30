@@ -1,0 +1,21 @@
+"MyList" module
+===============
+
+"print_sorted" print a list of the class MyList
+----------------------
+
+0.from 1-my_list import MyList.
+
+>>> MyList = __import__('1-my_list').MyList
+
+1. three elements
+>>> a = MyList()
+>>> a.append(4)
+>>> a.append(7)
+>>> a.append(1)
+>>> print(a)
+[4, 7, 1]
+>>> a.print_sorted()
+[1, 4, 7]
+
+
