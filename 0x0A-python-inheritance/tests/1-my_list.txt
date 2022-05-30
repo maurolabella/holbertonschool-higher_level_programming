@@ -8,6 +8,17 @@
 
 >>> MyList = __import__('1-my_list').MyList
 
+IMPORTING MODULE
+        >>> module = __import__('1-my_list')
+
+CHECKING DOCSTRING CLASS
+        >>> len(module.__doc__) > 1
+        True
+
+CHECKING DOCSTRING METHOD
+        >>> len(MyList.__doc__) > 1
+        True
+
 1. three elements
 	>>> a = MyList()
 	>>> a.append(4)
