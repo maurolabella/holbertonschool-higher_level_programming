@@ -2,6 +2,7 @@
 """Base Class Main File"""
 
 import json
+from pydoc import classname
 
 
 class Base():
@@ -23,6 +24,29 @@ class Base():
         if type(list_dictionaries) != list:
             raise TypeError("list_dictionaries must be a list")
         if any(type(element) != dict for element in list_dictionaries):
-            raise TypeError("list_dicationaries must have dictionaries\
+            raise TypeError("list_dictionaries must have dictionaries\
               as elements")
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """
+        class method that writes the JSON 
+        string representation of list_objs 
+        to a file
+        """
+        if type(list_objs) != list:
+            raise TypeError("list_objs must be a list")
+        sample_type = type(list_objs[0])
+        if any(isinstance(element, Base) != True or type(element)
+               != sample_type for element in list_objs):
+            raise TypeError(
+                "list_objs must have all same type Base-related instances")
+        filename = cls.__name__+".json"
+        if list_objs:
+            content = [element.to_dictionary() for element in list_objs]
+        else:
+            content = []
+        with open(filename, "w") as file:
+            file.write(cls.to_json_string(content))
+
