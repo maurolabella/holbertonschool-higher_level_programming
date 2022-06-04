@@ -86,3 +86,28 @@ class Rectangle(Base):
         """__str__"""
         return ("[Rectangle] ("+str(self.id)+") "+str(self.__x)+"/" +
                 str(self.__y)+" - "+str(self.__width)+"/"+str(self.__height))
+
+    def update(self, *args, **kwargs):
+        """
+        updates class Rectangle assigning an argument
+        to each attribute
+        """
+        if args:
+            atts = ['id', 'width', 'height', 'x', 'y']
+            mapped = zip(atts, args)
+            for key, value in mapped:
+                setattr(self, key, value)
+            return
+        if kwargs:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
+
+    def to_dictionary(self):
+        """returns the dictionary representation
+        of a rectangle
+        """
+        dict_rectangle = {}
+        for key, value in vars(self).items():
+            dict_rectangle[key.split("__")[-1]] = value
+        return dict_rectangle
