@@ -24,8 +24,10 @@ class Base():
     def to_json_string(list_dictionaries):
         """static method that returns the JSON string
         representation of a list_dictionaries"""
+        """
         if type(list_dictionaries) != list:
             raise TypeError("list_dictionaries must be a list")
+        """
         if any([type(element) != dict for element in list_dictionaries]):
             raise TypeError("list_dictionaries must have dictionaries\
               as elements")
