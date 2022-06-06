@@ -64,15 +64,20 @@ class Base():
     def from_json_string(json_string):
         """static method returning the \
         list of the JSON string representation"""
+        """
         if type(json_string) != str:
             raise TypeError("json_string must be a string representation")
+        """
         list = []
         if json_string:
             content = json.loads(json_string)
+            """
             if all([type(element) == dict for element in content]):
                 return content
             else:
                 raise ValueError("json_string must contain dictionaries")
+            """
+            return content
         else:
             return list
 
