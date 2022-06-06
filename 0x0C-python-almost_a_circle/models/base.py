@@ -46,9 +46,7 @@ class Base():
         """
         if type(list_objs) != list and list_objs is not None:
             raise TypeError("list_objs must be a list")
-        """
         sample_type = type(list_objs[0])
-        """
         if any([isinstance(element, Base) is not True or type(element)
                != sample_type for element in list_objs]):
             raise TypeError(
