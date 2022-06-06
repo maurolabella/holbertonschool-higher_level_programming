@@ -1,21 +1,26 @@
 #!/usr/bin/python3
-"""Square Class Creation"""
+"""
+Square Class Creation
+"""
 
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Square inheriting from Rectangle"""
+    """Square inheriting from Rectangle
+    """
 
     def __init__(self, size, x=0, y=0, id=None):
         """__init__ definitions"""
         super().__init__(size, size, x, y, id=None)
 
     def __str__(self):
-        """__str__ extension definition"""
+        """
+        __str__ overloading definition
+        """
         return (
-            "["+str(type(self).__name__)+"] ("+str(self.id)+") \
-            "+str(self.x)+"/" + str(self.y)+" - "+str(self.width))
+            "["+str(type(self).__name__)+"] ("+str(self.id)+") "
+            + str(self.x)+"/" + str(self.y)+" - "+str(self.width))
 
     @property
     def size(self):
