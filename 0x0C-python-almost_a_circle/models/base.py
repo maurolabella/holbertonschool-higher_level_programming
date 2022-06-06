@@ -29,10 +29,9 @@ class Base():
         if any([type(element) != dict for element in list_dictionaries]):
             raise TypeError("list_dictionaries must have dictionaries\
               as elements")
-        if list_dictionaries:
-            return json.dumps(list_dictionaries)
-        else:
-            return json.dumps([])
+        if list_dictionaries is None:
+            list_dictionaries = []
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
