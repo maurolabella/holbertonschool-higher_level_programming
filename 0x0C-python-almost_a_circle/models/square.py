@@ -19,7 +19,7 @@ class Square(Rectangle):
         __str__ overloading definition
         """
         return (
-            "["+str(type(self).__name__)+"] ("+str(self.id)+") "
+            "[Square] ("+str(self.id)+") "
             + str(self.x)+"/" + str(self.y)+" - "+str(self.width))
 
     @property
