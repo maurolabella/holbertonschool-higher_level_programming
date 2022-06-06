@@ -11,7 +11,7 @@ class RectangleTest(unittest.TestCase):
     """Rectsngle tests"""
 
     def test_rectangle_isinstance(self):
-        """isinstance"""
+        """isinstance test validation"""
         r1 = Rectangle(1, 2)
         self.assertEqual(isinstance(r1, Base), True)
 

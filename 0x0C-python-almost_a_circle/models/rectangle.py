@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Rectangle"""
+"""Rectangle Class Module"""
 
 from models.base import Base
 
@@ -86,7 +86,7 @@ class Rectangle(Base):
             print("#" * self.__width)
 
     def __str__(self):
-        """__str__"""
+        """__str__ extension definition"""
         return ("[Rectangle] ("+str(self.id)+") "+str(self.__x)+"/" +
                 str(self.__y)+" - "+str(self.__width)+"/"+str(self.__height))
 
