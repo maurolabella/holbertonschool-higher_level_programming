@@ -8,11 +8,11 @@ class Square(Rectangle):
     """Square inheriting from Rectangle"""
 
     def __init__(self, size, x=0, y=0, id=None):
-        """__init__"""
+        """__init__ definitions"""
         super().__init__(size, size, x, y, id=None)
 
     def __str__(self):
-        """__str__"""
+        """__str__ extension definition"""
         return (
             "["+str(type(self).__name__)+"] ("+str(self.id)+") \
             "+str(self.x)+"/" + str(self.y)+" - "+str(self.width))
