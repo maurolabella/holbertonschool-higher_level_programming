@@ -11,7 +11,7 @@ class Base():
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """__init__"""
+        """__init__ instance creation"""
         if id is not None:
             self.id = id
         else:
