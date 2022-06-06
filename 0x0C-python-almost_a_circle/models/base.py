@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Base Class Main File"""
 
-from fileinput import filename
 import json
 import os.path
 import csv
