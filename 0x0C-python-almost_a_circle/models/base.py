@@ -23,10 +23,11 @@ class Base():
     @staticmethod
     def to_json_string(list_dictionaries):
         """static method that returns the JSON string
-        representation of a list_dictionaries"""
+        representation of a list_dictionaries
+        """
+        """
         if type(list_dictionaries) != list:
             raise TypeError("list_dictionaries must be a list")
-        """
         if any([type(element) != dict for element in list_dictionaries]):
             raise TypeError("list_dictionaries must have dictionaries\
               as elements")
@@ -42,7 +43,7 @@ class Base():
         string representation of list_objs
         to a file
         """
-        if type(list_objs) != list:
+        if type(list_objs) != list and list_objs is not None:
             raise TypeError("list_objs must be a list")
         sample_type = type(list_objs[0])
         if any([isinstance(element, Base) is not True or type(element)
