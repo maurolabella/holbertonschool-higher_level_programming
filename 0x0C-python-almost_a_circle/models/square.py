@@ -12,7 +12,7 @@ class Square(Rectangle):
 
     def __init__(self, size, x=0, y=0, id=None):
         """__init__ definitions"""
-        super().__init__(size, size, x, y, id=None)
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """
@@ -30,7 +30,7 @@ class Square(Rectangle):
 
     @size.setter
     def size(self, size):
-        """size setter
+        """Size setter
         """
         self.width = size
         self.height = size
