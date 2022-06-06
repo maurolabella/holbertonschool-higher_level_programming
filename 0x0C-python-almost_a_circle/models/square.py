@@ -13,8 +13,9 @@ class Square(Rectangle):
 
     def __str__(self):
         """__str__"""
-        return ("["+str(type(self).__name__)+"] ("+str(self.id)+") "+str(self.x)+"/" +
-                str(self.y)+" - "+str(self.width))
+        return (
+            "["+str(type(self).__name__)+"] ("+str(self.id)+") \
+            "+str(self.x)+"/" + str(self.y)+" - "+str(self.width))
 
     @property
     def size(self):

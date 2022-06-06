@@ -39,7 +39,7 @@ class Base():
         if type(list_objs) != list:
             raise TypeError("list_objs must be a list")
         sample_type = type(list_objs[0])
-        if any([isinstance(element, Base) != True or type(element)
+        if any([isinstance(element, Base) is not True or type(element)
                != sample_type for element in list_objs]):
             raise TypeError(
                 "list_objs must have all same type Base-related instances")
@@ -99,7 +99,7 @@ class Base():
         if type(list_objs) != list:
             raise TypeError("list_objs must be a list")
         sample_type = type(list_objs[0])
-        if any([isinstance(element, cls) != True or type(element)
+        if any([isinstance(element, cls) is not True or type(element)
                != sample_type for element in list_objs]):
             raise TypeError(
                 "list_objs must have all same type Base-related instances")
