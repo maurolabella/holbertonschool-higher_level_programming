@@ -65,7 +65,12 @@ class SinglyLinkedList():
         """__str__ method"""
         curr = self.__head
         txt = ""
+        flag = 0
         while curr is not None:
-            txt += str(curr.data) + '\n'
+            if flag == 0:
+                txt += str(curr.data)
+                flag = 1
+            else:
+                txt += '\n' + str(curr.data)
             curr = curr.next_node
         return txt
