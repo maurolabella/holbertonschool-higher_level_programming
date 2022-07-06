@@ -1,4 +1,4 @@
---Write a script that converts hbtn_0c_0 database to UTF8
+-- Write a script that converts hbtn_0c_0 database to UTF8
 -- Alter the database
 ALTER DATABASE hbtn_0c_0 
 CHARACTER SET utf8mb4 
