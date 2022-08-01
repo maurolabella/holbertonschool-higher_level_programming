@@ -6,4 +6,4 @@ function callMeMoby (num, func) {
     func();
   }
 }
-module.exports = callMeMoby;
+module.exports = { callMeMoby };
