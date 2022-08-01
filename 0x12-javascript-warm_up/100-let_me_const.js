@@ -2,4 +2,4 @@
 // modify myvar through exporting a file
 
 myVar = 333;
-exports.module = myVar;
+module.exports.module = myVar;
