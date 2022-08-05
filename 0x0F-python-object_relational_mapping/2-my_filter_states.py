@@ -22,7 +22,7 @@ def main():
         """carry out normal procedure"""
         con = db.cursor()
         con.execute("SELECT * FROM states WHERE BINARY " +
-                    "name='{}'.format(state_name)" + "ORDER BY id ASC;")
+                    "name='{}'".format(state_name) + "ORDER BY id ASC;")
         rows = con.fetchall()
         for row in rows:
             print(row)
