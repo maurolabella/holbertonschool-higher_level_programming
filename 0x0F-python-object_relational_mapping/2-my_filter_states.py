@@ -10,6 +10,7 @@ def main():
     username = str(argv[1])
     password = str(argv[2])
     db_name = str(argv[3])
+    state_name = str(argv[4])
 
     db = MySQLdb.connect(host="localhost",
                          port=3306,
@@ -20,7 +21,8 @@ def main():
     if (db):
         """carry out normal procedure"""
         con = db.cursor()
-        con.execute("SELECT * FROM states;")
+        con.execute("SELECT * FROM states WHERE BINARY " +
+                    "name='{}'.format(state_name)" + "ORDER BY id ASC;")
         rows = con.fetchall()
         for row in rows:
             print(row)
