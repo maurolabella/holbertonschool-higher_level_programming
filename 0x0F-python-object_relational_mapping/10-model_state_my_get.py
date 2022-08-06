@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """SQLAlchemy ORM: Creating Session and Query on states
-   query(State)
+   query(State), sql_injection aware
 """
 
 import sys
@@ -14,6 +14,7 @@ def main():
     username = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]
+    st_name = sys.argv[4]
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(username, password, db_name),
@@ -22,9 +23,9 @@ def main():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for state in session.query(State).order_by(State.id):
-        if 'a' in state.name:
-            print("{:d}: {:s}".format(state.id, state.name))
+    states = session.query(State)
+    res = states.filter_by(name=st_name).first()
+    print(res.id if res else "Not found")
 
     session.close()
 
