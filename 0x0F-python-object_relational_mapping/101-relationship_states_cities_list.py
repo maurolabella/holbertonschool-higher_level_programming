@@ -19,6 +19,6 @@ if __name__ == "__main__":
 
     result = session.query(State).join(City)
     for row in result:
-        print(f"{row.id}: {row.name}")
+        print(f"{row.id}:  {row.name}")
         for city in row.cities:
             print(f"    {city.id}: {city.name}")
