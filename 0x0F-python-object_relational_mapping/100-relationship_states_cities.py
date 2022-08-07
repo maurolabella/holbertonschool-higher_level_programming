@@ -5,10 +5,8 @@ import sys
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from relationship_state import State
+from relationship_state import Base, State
 from relationship_city import City
-from base import Session, engine, Base
-
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
