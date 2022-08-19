@@ -3,7 +3,6 @@
 
 from urllib import request
 
-
 if __name__ == "__main__":
     """ main executable"""
     with request.urlopen("https://intranet.hbtn.io/status") as webf_fetch:
