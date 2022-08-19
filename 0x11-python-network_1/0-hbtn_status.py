@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """fetches https://intranet.hbtn.io/status"""
 
-from urllib import request
+import urllib.request
 
 if __name__ == "__main__":
     """ main executable"""
-    with request.urlopen("https://intranet.hbtn.io/status") as webf_fetch:
+    with urllib.request.urlopen("https://intranet.hbtn.io/status") as webf_fetch:
         res = webf_fetch.read()
         print("Body response:")
         print("\t- type: {}".format(type(res)))
