@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-write a script that fetches https://intranet.hbtn.io/status
-"""
+"""fetches https://intranet.hbtn.io/status"""
 
 from urllib import request
 
@@ -13,7 +11,7 @@ def main():
         print("Body response:")
         print("\t- type: {}".format(type(res)))
         print(f"\t- content: {res}")
-        print(f"\t- utf8 content: {res.decode('utf-8')}")
+        print(f"\t- utf8 content: {res.decode()}")
 
 
 if __name__ == "__main__":
