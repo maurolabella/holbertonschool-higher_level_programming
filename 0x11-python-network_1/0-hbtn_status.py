@@ -1,13 +1,11 @@
 #!/usr/bin/python3
-"""fetches https://intranet.hbtn.io/status"""
+"""scrip that fetches"""
 
-from urllib import request
+import urllib.request
 
-if __name__ == "__main__":
-    with request.urlopen("https://intranet.hbtn.io/status")\
-            as webf_fetch:
-        res = webf_fetch.read()
-        print("Body response:")
-        print("\t- type: {}".format(type(res)))
-        print(f"\t- content: {res}")
-        print(f"\t- utf8 content: {res.decode()}")
+with urllib.request.urlopen("https://intranet.hbtn.io/status") as response:
+    print("Body response:")
+    html = response.read()
+    print("\t- type: {}".format(type(html)))
+    print("\t- content: {}".format(html))
+    print("\t- utf8 content: {}".format(html.decode()))
