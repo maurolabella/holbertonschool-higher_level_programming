@@ -4,7 +4,7 @@
 from urllib import request
 
 
-def main():
+if __name__ == "__main__":
     """ main executable"""
     with request.urlopen("https://intranet.hbtn.io/status") as webf_fetch:
         res = webf_fetch.read()
@@ -12,8 +12,3 @@ def main():
         print("\t- type: {}".format(type(res)))
         print(f"\t- content: {res}")
         print(f"\t- utf8 content: {res.decode()}")
-
-
-if __name__ == "__main__":
-    """instruction to not executes when imported"""
-    main()
