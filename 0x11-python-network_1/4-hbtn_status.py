@@ -6,5 +6,5 @@ if __name__ == '__main__':
 
     res = get('https://intranet.hbtn.io/status')
     print("Body response:")
-    print(f"\t- type: {type(res.content.decode())}")
-    print(f"\t- content: {res.content.decode()}")
+    print("\t- type: {}".format(type(res.content.decode())))
+    print("\t- content: {}".format(res.content.decode()))
