@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""fetches https://intranet.hbtn.io/status"""
+"""Script fetches https://intranet.hbtn.io/status"""
 from requests import get
 
 if __name__ == '__main__':
