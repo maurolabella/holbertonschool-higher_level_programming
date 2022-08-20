@@ -16,5 +16,5 @@ if __name__ == "__main__":
         sha = commit.get("sha")
         print("{}:{}".format(sha, name))
         """ print(commit)"""
-        if count == 1:
+        if count == 10:
             break
