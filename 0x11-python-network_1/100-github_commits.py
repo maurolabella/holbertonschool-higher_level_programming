@@ -14,7 +14,7 @@ if __name__ == "__main__":
         count += 1
         name = commit.get("commit").get("author").get("name")
         sha = commit.get("sha")
-        print("{}:{}".format(sha, name))
+        print("{}: {}".format(sha, name))
         """ print(commit)"""
         if count == 10:
             break
